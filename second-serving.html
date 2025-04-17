@@ -77,7 +77,6 @@
 
         .content-section.active {
             display: grid;
-            gap: 20px;
             padding-top: 100px;
         }
 
@@ -136,12 +135,14 @@
         }
 
         .recipie-desc h2 {
+            text-decoration: none;
             font-size: 1em;
             margin: 0 0 4px;
             line-height: 1.2;
         }
 
         .recipie-desc p {
+            text-decoration: none;
             margin: 0;
             font-size: 0.85em;
         }
@@ -155,6 +156,9 @@
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
             gap: 20px;
+        }
+        .recipie-link {
+            text-decoration: none;
         }
     </style>
 </head>
@@ -183,6 +187,7 @@
                 <h2 id="entrees">Entrees</h2>
             </div>
             <div class="recipie-grid">
+                <a href="#recipie-page" class="recipie-link" data-section="about">
                 <div class="recipie">
                     <div class="recipie-pic">
                         <img src="assets/SmileyPlayerOG.jpg" alt="placeholder">
@@ -192,6 +197,7 @@
                         <p>A cheesy classic you can't go wrong with.</p>
                     </div>
                 </div>
+                </a>
                 <div class="recipie">
                     <div class="recipie-pic">
                         <img src="assets/SmileyPlayerOG.jpg" alt="placeholder">
@@ -298,6 +304,7 @@
 <script>
     document.addEventListener("DOMContentLoaded", function () {
         const navLinks = document.querySelectorAll(".nav-link");
+        const recipieLinks = document.querySelectorAll(".recipie-link");
         const sections = document.querySelectorAll(".content-section");
 
         function showSection(sectionId) {
@@ -309,6 +316,11 @@
                 const targetSection = link.getAttribute("data-section");
                 link.classList.toggle("active", targetSection === sectionId);
             });
+
+            recipieLinks.forEach((link) => {
+                const targetSection = link.getAttribute("data-section");
+                link.classList.toggle("active", targetSection === sectionId);
+            });
         }
 
         navLinks.forEach((link) => {
@@ -316,6 +328,23 @@
                 event.preventDefault();
                 const sectionId = link.getAttribute("data-section");
                 showSection(sectionId);
+            });
+        });
+
+        recipieLinks.forEach((link) => {
+            link.addEventListener("click", (event) => {
+                event.preventDefault();
+                const sectionId = link.getAttribute("data-section");
+                showSection(sectionId);
+            });
+        });
+
+        document.querySelectorAll('.recipie').forEach(card => {
+            card.addEventListener('click', () => {
+                const link = card.getAttribute('data-link');
+                if (link) {
+                    window.location.href = link;
+                }
             });
         });
 
