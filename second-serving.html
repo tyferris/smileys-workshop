@@ -9,7 +9,10 @@
         html {
             scroll-behavior: smooth;
             font-family: 'Roboto', sans-serif;
-            /* Improved font styling */
+        }
+
+        body {
+            margin: 0;
         }
 
         .header {
@@ -20,12 +23,11 @@
             position: fixed;
             top: 0;
             display: flex;
-            flex-direction: row;
             justify-content: space-between;
             align-items: center;
-            /* Vertically align items */
-            color: black;
+            padding: 0 20px;
             background-color: white;
+            border-bottom: 2px solid black;
         }
 
         .header h1 {
@@ -45,31 +47,19 @@
         }
 
         main {
-            padding-top: 80px;
-            /* Prevent content overlap */
-            position: relative;
-            width: calc(100% - 240px);
-            bottom: 0;
-            top: 90px;
-            left: 210px;
-            display: grid;
-            /* Use grid layout */
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            /* Responsive columns */
-            gap: 20px;
-            /* Space between grid items */
-            padding: 10px;
+            margin-left: 210px;
+            padding: 20px 20px;
             box-sizing: border-box;
         }
 
         .tab-box {
-            position: absolute;
-            display: flex;
             position: fixed;
+            display: flex;
             flex-direction: column;
             line-height: 40px;
             text-align: center;
             top: 90px;
+            left: 10px;
             padding: 10px;
             width: 175px;
             z-index: 1000;
@@ -81,64 +71,79 @@
             text-decoration: underline;
         }
 
-        .recipie {
-            position: relative;
-            width: 200px;
-            height: 200px;
-
-
-            overflow: hidden;
-            border: 2px solid rgb(20, 20, 20);
+        .content-section {
+            display: none;
         }
 
-        .recipie-desc {
-            position: absolute;
-            bottom: 0;
-            background-color: rgb(20, 20, 20);
-            color: white;
-            width: 95%;
-            padding: 5px;
-            text-align: center;
-            height: 30%;
-            font-size: smaller;
-        }
-
-        .recipie-desc h2 {
-            font-size: 1em;
-            line-height: 10px;
-        }
-
-        .recipie-pic img {
-            width: 100%;
-            height: 70%;
-            top: 0;
-            position: absolute;
-            object-fit: cover;
-        }
-
-        .recipie:hover {
-            transform: scale(1.05);
-            /* Slightly enlarges the item */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            /* Adds a shadow */
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        .content-section.active {
+            display: grid;
+            gap: 20px;
+            padding-top: 100px;
         }
 
         .sub-header {
-            position: relative;
             grid-column: 1 / -1;
-            /* Span all columns */
             height: 25px;
-            /* Fixed height as a percentage of the container */
-            width: 100%;
-            /* Ensure full width */
             border-bottom: 2px solid black;
             display: flex;
             align-items: center;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            width: 100%;
         }
 
         .sub-header h2 {
             font-size: 2em;
+            margin: 0;
+        }
+
+        .recipie {
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            border: 2px solid rgb(20, 20, 20);
+            background-color: white;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            height: 250px;
+        }
+
+        .recipie:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .recipie-pic {
+            flex: 1 1 70%;
+            overflow: hidden;
+        }
+
+        .recipie-pic img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .recipie-desc {
+            flex: 1 1 30%;
+            background-color: rgb(20, 20, 20);
+            color: white;
+            padding: 5px 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .recipie-desc h2 {
+            font-size: 1em;
+            margin: 0 0 4px;
+            line-height: 1.2;
+        }
+
+        .recipie-desc p {
+            margin: 0;
+            font-size: 0.85em;
         }
 
         .nav-link.active {
@@ -146,11 +151,7 @@
             color: blue;
         }
 
-        .content-section {
-            display: none;
-        }
-
-        .content-section.active {
+        .recipie-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
             gap: 20px;
@@ -166,149 +167,158 @@
             <a href="#about" class="nav-link" data-section="about">About</a>
         </nav>
     </div>
+    <div id="home" class="content-section">
+        <div class="tab-box">
+            <h2>"What are we feeling?"</h2>
+            <nav>
+                <a href="#entrees">Entrees</a><br>
+                <a href="#snacks">Snacks</a><br>
+                <a href="#dessert">Dessert</a><br>
+                <a href="#lactose-free">Lactose Free</a><br>
+            </nav>
+        </div>
 
-    <div class="tab-box">
-        <h2>"What are we feeling?"</h2>
-        <nav>
-            <a href="#entrees">Entrees</a><br>
-            <a href="#snacks">Snacks</a><br>
-            <a href="#dessert">Dessert</a><br>
-            <a href="#lactose-free">Lactose Free</a><br>
-        </nav>
-    </div>
-
-    <main>
-        <div id="home" class="content-section">
+        <main>
             <div class="sub-header">
                 <h2 id="entrees">Entrees</h2>
             </div>
-            <div class="recipie">
-                <div class="recipie-pic">
-                    <img src="assets/SmileyPlayerOG.jpg" alt="placeholder">
+            <div class="recipie-grid">
+                <div class="recipie">
+                    <div class="recipie-pic">
+                        <img src="assets/SmileyPlayerOG.jpg" alt="placeholder">
+                    </div>
+                    <div class="recipie-desc">
+                        <h2>Grilled Cheese</h2>
+                        <p>A cheesy classic you can't go wrong with.</p>
+                    </div>
                 </div>
-                <div class="recipie-desc">
-                    <h2>Grilled Cheese</h2>
-                    <p>A cheesy classic you can't go wrong with.</p>
+                <div class="recipie">
+                    <div class="recipie-pic">
+                        <img src="assets/SmileyPlayerOG.jpg" alt="placeholder">
+                    </div>
+                    <div class="recipie-desc">
+                        <h2>Grilled Cheese</h2>
+                        <p>A cheesy classic you can't go wrong with.</p>
+                    </div>
                 </div>
-            </div>
-            <div class="recipie">
-                <div class="recipie-pic">
-                    <img src="assets/SmileyPlayerOG.jpg" alt="placeholder">
+                <div class="recipie">
+                    <div class="recipie-pic">
+                        <img src="assets/SmileyPlayerOG.jpg" alt="placeholder">
+                    </div>
+                    <div class="recipie-desc">
+                        <h2>Grilled Cheese</h2>
+                        <p>A cheesy classic you can't go wrong with.</p>
+                    </div>
                 </div>
-                <div class="recipie-desc">
-                    <h2>Grilled Cheese</h2>
-                    <p>A cheesy classic you can't go wrong with.</p>
+                <div class="recipie">
+                    <div class="recipie-pic">
+                        <img src="assets/SmileyPlayerOG.jpg" alt="placeholder">
+                    </div>
+                    <div class="recipie-desc">
+                        <h2>Grilled Cheese</h2>
+                        <p>A cheesy classic you can't go wrong with.</p>
+                    </div>
                 </div>
-            </div>
-            <div class="recipie">
-                <div class="recipie-pic">
-                    <img src="assets/SmileyPlayerOG.jpg" alt="placeholder">
+                <div class="recipie">
+                    <div class="recipie-pic">
+                        <img src="assets/SmileyPlayerOG.jpg" alt="placeholder">
+                    </div>
+                    <div class="recipie-desc">
+                        <h2>Grilled Cheese</h2>
+                        <p>A cheesy classic you can't go wrong with.</p>
+                    </div>
                 </div>
-                <div class="recipie-desc">
-                    <h2>Grilled Cheese</h2>
-                    <p>A cheesy classic you can't go wrong with.</p>
+                <div class="recipie">
+                    <div class="recipie-pic">
+                        <img src="assets/SmileyPlayerOG.jpg" alt="placeholder">
+                    </div>
+                    <div class="recipie-desc">
+                        <h2>Grilled Cheese</h2>
+                        <p>A cheesy classic you can't go wrong with.</p>
+                    </div>
                 </div>
-            </div>
-            <div class="recipie">
-                <div class="recipie-pic">
-                    <img src="assets/SmileyPlayerOG.jpg" alt="placeholder">
+                <div class="recipie">
+                    <div class="recipie-pic">
+                        <img src="assets/SmileyPlayerOG.jpg" alt="placeholder">
+                    </div>
+                    <div class="recipie-desc">
+                        <h2>Grilled Cheese</h2>
+                        <p>A cheesy classic you can't go wrong with.</p>
+                    </div>
                 </div>
-                <div class="recipie-desc">
-                    <h2>Grilled Cheese</h2>
-                    <p>A cheesy classic you can't go wrong with.</p>
-                </div>
-            </div>
-            <div class="recipie">
-                <div class="recipie-pic">
-                    <img src="assets/SmileyPlayerOG.jpg" alt="placeholder">
-                </div>
-                <div class="recipie-desc">
-                    <h2>Grilled Cheese</h2>
-                    <p>A cheesy classic you can't go wrong with.</p>
-                </div>
-            </div>
-            <div class="recipie">
-                <div class="recipie-pic">
-                    <img src="assets/SmileyPlayerOG.jpg" alt="placeholder">
-                </div>
-                <div class="recipie-desc">
-                    <h2>Grilled Cheese</h2>
-                    <p>A cheesy classic you can't go wrong with.</p>
-                </div>
-            </div>
-            <div class="recipie">
-                <div class="recipie-pic">
-                    <img src="assets/SmileyPlayerOG.jpg" alt="placeholder">
-                </div>
-                <div class="recipie-desc">
-                    <h2>Grilled Cheese</h2>
-                    <p>A cheesy classic you can't go wrong with.</p>
-                </div>
-            </div>
-            <div class="recipie">
-                <div class="recipie-pic">
-                    <img src="assets/SmileyPlayerOG.jpg" alt="placeholder">
-                </div>
-                <div class="recipie-desc">
-                    <h2>Leftover Stir Fry</h2>
-                    <p>Reimagine your fridge contents.</p>
+                <div class="recipie">
+                    <div class="recipie-pic">
+                        <img src="assets/SmileyPlayerOG.jpg" alt="placeholder">
+                    </div>
+                    <div class="recipie-desc">
+                        <h2>Leftover Stir Fry</h2>
+                        <p>Reimagine your fridge contents.</p>
+                    </div>
                 </div>
             </div>
 
             <div class="sub-header">
                 <h2 id="snacks">Snacks</h2>
             </div>
-
-            <div class="recipie">
-                <div class="recipie-pic">
-                    <img src="assets/SmileyPlayerOG.jpg" alt="placeholder">
+            <div class="recipie-grid">
+                <div class="recipie">
+                    <div class="recipie-pic">
+                        <img src="assets/SmileyPlayerOG.jpg" alt="placeholder">
+                    </div>
+                    <div class="recipie-desc">
+                        <h2>Popcorn Remix</h2>
+                        <p>Add spices or chocolate for flair.</p>
+                    </div>
                 </div>
-                <div class="recipie-desc">
-                    <h2>Popcorn Remix</h2>
-                    <p>Add spices or chocolate for flair.</p>
+                <div class="recipie">
+                    <div class="recipie-pic">
+                        <img src="assets/SmileyPlayerOG.jpg" alt="placeholder">
+                    </div>
+                    <div class="recipie-desc">
+                        <h2>Trail Mix</h2>
+                        <p>Customize with whatever's in your pantry.</p>
+                    </div>
                 </div>
             </div>
-            <div class="recipie">
-                <div class="recipie-pic">
-                    <img src="assets/SmileyPlayerOG.jpg" alt="placeholder">
-                </div>
-                <div class="recipie-desc">
-                    <h2>Trail Mix</h2>
-                    <p>Customize with whatever's in your pantry.</p>
-                </div>
-            </div>
-        </div>
+        </main>
+    </div>
 
-        <div id="about" class="content-section">
-            <p>Hi! I'm the creator of SecondServing.com — a place to reinvent leftovers into something fun and
-                flavorful.</p>
-        </div>
+
+    <div id="about" class="content-section">
+        <p>Hi! I'm the creator of SecondServing.com — a place to reinvent leftovers into something fun and
+            flavorful.</p>
+    </div>
+
+    <div id="recipie-page" class="content-section">
+        <p>Here you can find all the recipes we've created so far.</p>
+    </div>
     </main>
+</body>
 
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const navLinks = document.querySelectorAll(".nav-link");
-            const sections = document.querySelectorAll(".content-section");
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const navLinks = document.querySelectorAll(".nav-link");
+        const sections = document.querySelectorAll(".content-section");
 
-            function showSection(sectionId) {
-                sections.forEach((section) => {
-                    section.classList.toggle("active", section.id === sectionId);
-                });
-
-                navLinks.forEach((link) => {
-                    const targetSection = link.getAttribute("data-section");
-                    link.classList.toggle("active", targetSection === sectionId);
-                });
-            }
-
-            navLinks.forEach((link) => {
-                link.addEventListener("click", (event) => {
-                    event.preventDefault();
-                    const sectionId = link.getAttribute("data-section");
-                    showSection(sectionId);
-                });
+        function showSection(sectionId) {
+            sections.forEach((section) => {
+                section.classList.toggle("active", section.id === sectionId);
             });
 
-            showSection("home"); // Default view
+            navLinks.forEach((link) => {
+                const targetSection = link.getAttribute("data-section");
+                link.classList.toggle("active", targetSection === sectionId);
+            });
+        }
+
+        navLinks.forEach((link) => {
+            link.addEventListener("click", (event) => {
+                event.preventDefault();
+                const sectionId = link.getAttribute("data-section");
+                showSection(sectionId);
+            });
         });
-    </script>
+
+        showSection("home"); // Default view
+    });
+</script>
