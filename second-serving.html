@@ -157,8 +157,23 @@
             grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
             gap: 20px;
         }
+
         .recipie-link {
             text-decoration: none;
+        }
+
+        [id] {
+            scroll-margin-top: 80px;
+        }
+
+        .food_pic_box {
+            width: 30%;
+            height: 20%;
+            top: 80px;
+            left: 0;
+            position: fixed;
+            ;
+            object-fit: cover;
         }
     </style>
 </head>
@@ -187,104 +202,34 @@
                 <h2 id="entrees">Entrees</h2>
             </div>
             <div class="recipie-grid">
-                <a href="#recipie-page" class="recipie-link" data-section="about">
-                <div class="recipie">
-                    <div class="recipie-pic">
-                        <img src="assets/SmileyPlayerOG.jpg" alt="placeholder">
+                <a href="#recipie-page" class="recipie-link" data-section="first_recipie">
+                    <div class="recipie">
+                        <div class="recipie-pic">
+                            <img src="assets/SmileyPlayerOG.jpg" alt="placeholder">
+                        </div>
+                        <div class="recipie-desc">
+                            <h2>Grilled Cheese</h2>
+                            <p>A cheesy classic you can't go wrong with.</p>
+                        </div>
                     </div>
-                    <div class="recipie-desc">
-                        <h2>Grilled Cheese</h2>
-                        <p>A cheesy classic you can't go wrong with.</p>
-                    </div>
-                </div>
                 </a>
-                <div class="recipie">
-                    <div class="recipie-pic">
-                        <img src="assets/SmileyPlayerOG.jpg" alt="placeholder">
-                    </div>
-                    <div class="recipie-desc">
-                        <h2>Grilled Cheese</h2>
-                        <p>A cheesy classic you can't go wrong with.</p>
-                    </div>
-                </div>
-                <div class="recipie">
-                    <div class="recipie-pic">
-                        <img src="assets/SmileyPlayerOG.jpg" alt="placeholder">
-                    </div>
-                    <div class="recipie-desc">
-                        <h2>Grilled Cheese</h2>
-                        <p>A cheesy classic you can't go wrong with.</p>
-                    </div>
-                </div>
-                <div class="recipie">
-                    <div class="recipie-pic">
-                        <img src="assets/SmileyPlayerOG.jpg" alt="placeholder">
-                    </div>
-                    <div class="recipie-desc">
-                        <h2>Grilled Cheese</h2>
-                        <p>A cheesy classic you can't go wrong with.</p>
-                    </div>
-                </div>
-                <div class="recipie">
-                    <div class="recipie-pic">
-                        <img src="assets/SmileyPlayerOG.jpg" alt="placeholder">
-                    </div>
-                    <div class="recipie-desc">
-                        <h2>Grilled Cheese</h2>
-                        <p>A cheesy classic you can't go wrong with.</p>
-                    </div>
-                </div>
-                <div class="recipie">
-                    <div class="recipie-pic">
-                        <img src="assets/SmileyPlayerOG.jpg" alt="placeholder">
-                    </div>
-                    <div class="recipie-desc">
-                        <h2>Grilled Cheese</h2>
-                        <p>A cheesy classic you can't go wrong with.</p>
-                    </div>
-                </div>
-                <div class="recipie">
-                    <div class="recipie-pic">
-                        <img src="assets/SmileyPlayerOG.jpg" alt="placeholder">
-                    </div>
-                    <div class="recipie-desc">
-                        <h2>Grilled Cheese</h2>
-                        <p>A cheesy classic you can't go wrong with.</p>
-                    </div>
-                </div>
-                <div class="recipie">
-                    <div class="recipie-pic">
-                        <img src="assets/SmileyPlayerOG.jpg" alt="placeholder">
-                    </div>
-                    <div class="recipie-desc">
-                        <h2>Leftover Stir Fry</h2>
-                        <p>Reimagine your fridge contents.</p>
-                    </div>
-                </div>
             </div>
 
             <div class="sub-header">
                 <h2 id="snacks">Snacks</h2>
             </div>
             <div class="recipie-grid">
-                <div class="recipie">
-                    <div class="recipie-pic">
-                        <img src="assets/SmileyPlayerOG.jpg" alt="placeholder">
+                <a href="#recipie-page" class="recipie-link" data-section="recipie-page">
+                    <div class="recipie">
+                        <div class="recipie-pic">
+                            <img src="assets/SmileyPlayerOG.jpg" alt="placeholder">
+                        </div>
+                        <div class="recipie-desc">
+                            <h2>Grilled Cheese</h2>
+                            <p>A cheesy classic you can't go wrong with.</p>
+                        </div>
                     </div>
-                    <div class="recipie-desc">
-                        <h2>Popcorn Remix</h2>
-                        <p>Add spices or chocolate for flair.</p>
-                    </div>
-                </div>
-                <div class="recipie">
-                    <div class="recipie-pic">
-                        <img src="assets/SmileyPlayerOG.jpg" alt="placeholder">
-                    </div>
-                    <div class="recipie-desc">
-                        <h2>Trail Mix</h2>
-                        <p>Customize with whatever's in your pantry.</p>
-                    </div>
-                </div>
+                </a>
             </div>
         </main>
     </div>
@@ -295,8 +240,12 @@
             flavorful.</p>
     </div>
 
-    <div id="recipie-page" class="content-section">
-        <p>Here you can find all the recipes we've created so far.</p>
+    <div id="first_recipie" class="content-section">
+        <div class="food_pic_box">
+            <div class="recipie_pic">
+                <img src="assets/SmileyPlayerOG.jpg" alt="placeholder">
+            </div>
+        </div>
     </div>
     </main>
 </body>
