@@ -167,13 +167,83 @@
         }
 
         .food_pic_box {
-            width: 30%;
-            height: 20%;
+            width: 400px;
+            height: 400px;
             top: 80px;
             left: 0;
             position: fixed;
-            ;
-            object-fit: cover;
+            display: flex;
+            overflow: hidden;
+            border-bottom: 2px solid black;
+        }
+
+        .ingredient_box {
+            width: 380px;
+            height: auto;
+            position: fixed;
+            top: 480px;
+            display: flex;
+            flex-direction: column;
+            padding: 10px;
+        }
+
+        .ingredient_box_header {
+            color: Blue;
+            text-align: center;
+        }
+
+        .ingredient_box ul {
+            font-size: 1.4em;
+            left: 10px;
+            line-height: 2.5em;
+        }
+
+        .food_header {
+            width: calc(100% - 400px);
+            height: 40px;
+            font-size: 2em;
+            text-decoration: underline;
+            margin: 0;
+            padding: 10px;
+            left: 400px;
+            position: fixed;
+            top: 80px;
+            text-align: center;
+            align-items: center;
+            justify-content: center;
+            display: flex;
+            border-left: 2px solid black;
+        }
+
+        .food_box {
+            top: 140px;
+            left: 400px;
+            position: fixed;
+            display: flex;
+            height: 100%;
+            width: 100%;
+            padding: 10px;
+            flex-direction: column;
+            border: 2px solid black;
+        }
+
+        .instructions_box {
+            width: calc(100% - 400px);
+            height: calc(100% - 40px);
+            position: fixed;
+            top: 480px;
+            left: 400px;
+            padding: 10px;
+        }
+        .instruction_header {
+            grid-column: 1 / -1;
+            height: 25px;
+            border-bottom: 2px solid black;
+            display: flex;
+            align-items: center;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            width: 10%;
         }
     </style>
 </head>
@@ -202,34 +272,35 @@
                 <h2 id="entrees">Entrees</h2>
             </div>
             <div class="recipie-grid">
-                <a href="#recipie-page" class="recipie-link" data-section="first_recipie">
+                <a href="#recipie-page" class="recipie-link" data-section="MacaroniCorn">
                     <div class="recipie">
                         <div class="recipie-pic">
                             <img src="assets/SmileyPlayerOG.jpg" alt="placeholder">
                         </div>
                         <div class="recipie-desc">
-                            <h2>Grilled Cheese</h2>
-                            <p>A cheesy classic you can't go wrong with.</p>
+                            <h2>Macaroni Corn</h2>
+                            <p>One of Gramma's favorites! Tastes better than it sounds.</p>
                         </div>
                     </div>
                 </a>
-            </div>
 
-            <div class="sub-header">
-                <h2 id="snacks">Snacks</h2>
-            </div>
-            <div class="recipie-grid">
-                <a href="#recipie-page" class="recipie-link" data-section="recipie-page">
-                    <div class="recipie">
-                        <div class="recipie-pic">
-                            <img src="assets/SmileyPlayerOG.jpg" alt="placeholder">
+                <div class="sub-header">
+                    <h2 id="snacks">Snacks</h2>
+                </div>
+
+                <div class="recipie-grid">
+                    <a href="#recipie-page" class="recipie-link" data-section="GrilledCheese">
+                        <div class="recipie">
+                            <div class="recipie-pic">
+                                <img src="assets/SmileyPlayerOG.jpg" alt="placeholder">
+                            </div>
+                            <div class="recipie-desc">
+                                <h2>Grilled Cheese</h2>
+                                <p>Classic comfort food!</p>
+                            </div>
                         </div>
-                        <div class="recipie-desc">
-                            <h2>Grilled Cheese</h2>
-                            <p>A cheesy classic you can't go wrong with.</p>
-                        </div>
-                    </div>
-                </a>
+                    </a>
+                </div>
             </div>
         </main>
     </div>
@@ -240,14 +311,28 @@
             flavorful.</p>
     </div>
 
-    <div id="first_recipie" class="content-section">
+    <div id="MacaroniCorn" class="content-section">
         <div class="food_pic_box">
-            <div class="recipie_pic">
-                <img src="assets/SmileyPlayerOG.jpg" alt="placeholder">
-            </div>
+            <img src="assets/SmileyPlayerOG.jpg" alt="placeholder">
         </div>
-    </div>
-    </main>
+        <div class="ingredient_box">
+            <h2 class="ingredient_box_header">Macaroni Corn</h2>
+            <ul>
+                <li>1 can cream corn</li>
+                <li>1 can whole kernel corn</li>
+                <li>1 cup Velveta cheese</li>
+                <li>1 cup macaroni</li>
+                <li>1 stick of butter</li>
+                <li>Salt and pepper</li>
+            </ul>
+        </div>
+        <div class="food_header">Grilled Cheese</div>
+        <div class="food_box">
+            <div class="instruction_header"><h2>Instructions</h2></div>
+            <p>Preheat oven to 350 degrees. Combine all ingredients in mixing bowl, then pour out into a greased 9x13 inch pan. </p>
+            <div class="instruction_header"><h2>About</h2></div>
+            <p>This one is from Grandma's collection, and was the first one she thought of to make for the house. I can't wait to get the pictures on here and try some myself!</p>
+        </div>
 </body>
 
 <script>
