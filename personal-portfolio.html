@@ -236,6 +236,73 @@
         scrollbar-width: none;
         -ms-overflow-style: none;
       }
+
+      /* General responsive rules */
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+
+      /* Responsive design */
+      @media (max-width: 768px) {
+        #header-side {
+          display: none;
+        }
+        main {
+          margin-left: 0;
+        }
+        .header-portfolio {
+          left: 0;
+          width: 100%;
+        }
+        .portfolio {
+          left: 0;
+        }
+        .suit-image {
+          width: 100%;
+          margin: 0;
+          height: auto;
+          max-height: 50vh;
+        }
+        .box {
+          position: static;
+          transform: none;
+          text-align: center;
+          margin-top: 20px;
+        }
+        .contact-box {
+          position: static;
+          transform: none;
+          text-align: center;
+          margin-top: 20px;
+        }
+        .about-box {
+          margin-left: 0;
+          text-align: center;
+        }
+        .about-box h2 {
+          margin-left: 0;
+        }
+        .edu-years-box {
+          width: 100%;
+          height: auto;
+          flex-direction: row;
+          justify-content: space-around;
+        }
+        .highschool-box, .community-box, .college-box {
+          width: 90%;
+          margin-left: 5%;
+          height: auto;
+          position: static;
+          margin-bottom: 20px;
+        }
+        .portfolio {
+          flex-direction: column;
+        }
+        .portfolio-item {
+          width: 100%;
+        }
+      }
     </style>
 
     <script>
