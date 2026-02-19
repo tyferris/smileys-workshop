@@ -31,6 +31,7 @@
       left: 65%;
       top: 35%;
       transform: translate(-50%, -50%);
+      font-size: 1.5em;
       vertical-align: middle;
       text-align: center;
     }
@@ -43,11 +44,16 @@
     }
 
     .about-box-img {
-      width: 20%;
-      height: 40%;
+      border-radius: 50%;
+    }
+
+    .about-box-quote {
       position: absolute;
-      top: 60%;
+      top: 50%;
       left: 80%;
+      color: white;
+      flex-direction: column;
+      text-align: center;
     }
 
     .edu-years-box {
@@ -74,6 +80,7 @@
       position: absolute;
       width: 50%;
       color: white;
+      font-size: 1.5em;
       align-items: center;
       justify-content: center;
       flex-direction: column;
@@ -90,6 +97,7 @@
       text-align: center;
       width: 50%;
       color: white;
+      font-size: 1.5em;
       align-items: center;
       justify-content: center;
       flex-direction: column;
@@ -106,7 +114,7 @@
       position: absolute;
       width: 50%;
       color: white;
-      font-size: .9em;
+      font-size: 1.5em;
       align-items: center;
       justify-content: center;
       flex-direction: column;
@@ -245,7 +253,6 @@
 
     .portfolio-item {
       width: 33.3333333%;
-      border: 2px solid grey;
       margin: 5px;
       overflow: hidden;
 
@@ -265,6 +272,7 @@
       align-items: center;
       justify-content: center;
     }
+
     .portfolio-item-header a {
       color: white;
     }
@@ -318,7 +326,7 @@
 <body>
   <div id="header-side">
     <nav>
-      <img src="assets/SmileyPlayerOG.jpg" alt="Tyler Ferris" class="profile-image" />
+      <img src="assets/smiley_headshot.jpg" alt="Tyler Ferris" class="profile-image" />
       <h1>Tyler Ferris</h1>
       <p><i>Web developer in Mississippi</i></p>
       <a href="#home" class="nav-link" data-section="home">Home</a><br />
@@ -335,7 +343,7 @@
       <div class="box">
         <h1>I am Tyler Ferris</h1>
         <p>
-          I'm Tyler, a budding web developer with a passion <br />for coding
+          a budding web developer with a passion <br />for coding
           and drive for success!
         </p>
       </div>
@@ -355,10 +363,10 @@
 
     <!-- About Section -->
     <div id="about" class="content-section">
-      <img src="assets/SmileyPlayerOG.jpg" alt="headshot" class="about-box-img" />
+
       <div class="about-box">
-        <h2>Hi, I'm Tyler.</h2>
-        <h4>an aspiring frontend developer based in Mississippi</h4>
+        <h2>Hi, I'm Tyler:</h2>
+        <h4>an aspiring web developer based in Mississippi</h4>
         <p>
           Ever since graduating with my computer science bachelors in 2024, I
           have wanted to code anything from video games and mobile
@@ -367,6 +375,10 @@
           in school, I started working in the middle of both sides, frontend
           development.
         </p>
+      </div>
+      <div class="about-box-quote">
+        <p>"My friends call me Smiley!"</p>
+        <img src="assets/SmileyPlayerOG.jpg" alt="headshot" class="about-box-img" />
       </div>
     </div>
 
@@ -404,8 +416,23 @@
       <div class="header-portfolio">
         <h1>Portfolio</h1>
       </div>
-
       <div class="portfolio">
+        <div class="portfolio-item">
+          <img src="assets/you_are_here.png" alt="Website" class="portfolio-img" />
+          <div class="portfolio-item-header">
+            <a href="#home" class="nav-link" data-section="home">
+              <p>SmileySite.com</p>
+            </a>
+          </div>
+          <div class="portfolio-txt">
+            <p>This is my first big solo project in web development! I made this site in VS Code integrated into Github
+              with the HTML, CSS, and Javascript languages.
+              I made this and plan to continuously update it as I learn and make more in web development!
+            </p>
+          </div>
+        </div>
+
+
         <div class="portfolio-item">
           <img src="assets/compost.png" alt="Composter" class="portfolio-img" />
           <div class="portfolio-item-header">
@@ -439,20 +466,7 @@
           </div>
         </div>
 
-        <div class="portfolio-item">
-          <img src="assets/placeholder-image.jpg" alt=" Placeholder" class="portfolio-img" />
-          <div class="portfolio-item-header">
-            <a href="#home" class="nav-link" data-section="home">
-              <p>SmileySite.com</p>
-            </a>
-          </div>
-          <div class="portfolio-txt">
-            <p>This is my first big solo project in web development! I made this site in VS Code integrated into Github
-              with the HTML, CSS, and Javascript languages.
-              I made this and plan to continuously update it as I learn and make more in web development!
-            </p>
-          </div>
-        </div>
+
 
       </div>
     </div>
